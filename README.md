@@ -145,10 +145,80 @@
 | 订单发货打印-电子面单           |    |    |    |   | ✅  |
 
 
-## 五、联系作者
+## 五、部署说明
 
-**作者微信公众号：qihangerp168**
+项目采用内嵌数据库`H2`数据库文件在根目录`db`文件夹下，打包运行记得把`db`文件夹拷贝到`jar`同级目录下.
+
+### 5.1 项目打包
+
++ 后端打包:进入`api`文件夹下运行`mvn clean package`
++ 前端打包:进入`vue`文件夹下运行`npm run build:prod`
+
+### 5.2 启动后端
++ 复制数据库文件：
+
+  项目采用内嵌数据库`H2`数据库文件在根目录`db`文件夹下，打包运行记得把`db`文件夹拷贝到`jar`同级目录下.
+
++ 启动jar：`java -jar api-3.0.2.jar`
+
+### 5.3 启动前端
++ 下载解压Nginx
++ 配置Nginx
+    ```
+      server {
+        listen       80;
+        server_name  localhost;
+        charset utf-8;
+
+        location / {
+            root   ../dist; #前端打包后的dist文件夹
+            try_files $uri $uri/ /index.html;
+            index  index.html index.htm;
+        }
+        
+        location /prod-api/ {
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header REMOTE-HOST $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://localhost:8099/;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+  ```
++ 启动Nginx
+
+### 5.4 访问登录
++ 访问地址：http://localhost
++ 登录名：admin
++ 登录密码：admin123
+
+## 六、支持发展
+
+**感谢大家的关注与支持！希望利用本人从事电商10余年的经验帮助到大家提升工作效率！**
 
 💖 如果觉得有用记得点 Star⭐
+
+### 6.1 捐助支持
+作者为兼职做开源,平时还需要工作,如果帮到了您可以请作者吃个盒饭
+
+<img src="weixinzhifu.jpg" width="300px" />
+<img src="zhifubao.jpg" width="300px" />
+
+### 6.2 有偿服务
++ 提供部署服务
++ 提供演示包服务
++ 提供定制化开发服务
++ 提供系统培训服务
++ 提供版本商业化支持服务
+
+
+
+
+
 
 
