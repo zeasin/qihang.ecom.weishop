@@ -7,10 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import tech.qihangec.api.common.BaseController;
-import tech.qihangec.api.common.PageQuery;
-import tech.qihangec.api.common.PageResult;
-import tech.qihangec.api.common.TableDataInfo;
+import tech.qihangec.api.common.*;
 import tech.qihangec.api.domain.ErpGoods;
 import tech.qihangec.api.domain.ErpGoodsSku;
 import tech.qihangec.api.service.ErpGoodsService;
@@ -85,18 +82,17 @@ public class GoodsController extends BaseController
 //    {
 //        return success(skuService.getById(id));
 //    }
-//    /**
-//     * 新增商品管理
-//     */
-//    @PreAuthorize("@ss.hasPermi('goods:goods:add')")
-//    @PostMapping
-//    public AjaxResult add(@RequestBody OGoods goods)
-//    {
-//        goods.setCreateBy(getUsername());
-//        int result = goodsService.insertGoods(goods);
-//        if(result == -1) new AjaxResult(501,"商品编码已存在");
-//        return toAjax(1);
-//    }
+    /**
+     * 新增商品管理
+     */
+    @PostMapping("/add")
+    public AjaxResult add(@RequestBody ErpGoods goods)
+    {
+        goods.setCreateBy(getUsername());
+        int result = goodsService.insertGoods(goods);
+        if(result == -1) new AjaxResult(501,"商品编码已存在");
+        return toAjax(1);
+    }
 //
 //    @PreAuthorize("@ss.hasPermi('goods:goods:add')")
 //    @PostMapping("/goodsSku")

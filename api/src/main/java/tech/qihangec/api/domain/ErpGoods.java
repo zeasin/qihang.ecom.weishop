@@ -3,7 +3,12 @@ package tech.qihangec.api.domain;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
+import tech.qihangec.api.domain.bo.GoodsSpecAddBo;
 
 /**
  * 商品库存管理
@@ -190,6 +195,18 @@ public class ErpGoods implements Serializable {
      * 更新时间
      */
     private Date updateTime;
+
+    @TableField(exist = false)
+    private Integer[] colorValues;
+    @TableField(exist = false)
+    private Map<Long,String> colorImages;
+    @TableField(exist = false)
+    private Integer[] sizeValues;
+    @TableField(exist = false)
+    private Integer[] styleValues;
+
+    @TableField(exist = false)
+    private List<GoodsSpecAddBo> specList;
 
     private static final long serialVersionUID = 1L;
 }

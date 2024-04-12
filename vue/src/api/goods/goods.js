@@ -29,7 +29,7 @@ export function getGoods(id) {
 // 新增商品管理
 export function addGoods(data) {
   return request({
-    url: '/goods/goods',
+    url: '/goods/add',
     method: 'post',
     data: data
   })

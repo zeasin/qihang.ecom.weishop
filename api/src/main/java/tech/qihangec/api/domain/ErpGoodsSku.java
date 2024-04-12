@@ -33,7 +33,7 @@ public class ErpGoodsSku implements Serializable {
     /**
      * 颜色id
      */
-    private Integer colorId;
+    private Long colorId;
 
     /**
      * 颜色值
@@ -48,7 +48,7 @@ public class ErpGoodsSku implements Serializable {
     /**
      * 尺码id
      */
-    private Integer sizeId;
+    private Long sizeId;
 
     /**
      * 尺码值
@@ -58,7 +58,7 @@ public class ErpGoodsSku implements Serializable {
     /**
      * 款式id
      */
-    private Integer styleId;
+    private Long styleId;
 
     /**
      * 款式值

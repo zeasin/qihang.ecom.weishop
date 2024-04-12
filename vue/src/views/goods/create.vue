@@ -224,6 +224,7 @@ import {
   pcaTextArr,
   codeToText,
 } from "element-china-area-data";
+import {listAllSupplier} from "@/api/scm/supplier";
 
 export default {
   name: "OrderCreate",
@@ -280,13 +281,16 @@ export default {
   },
   created() {
     this.getCategoryList()
-    listCategoryAttributeValue({categoryAttributeId:114}).then(resp=>{
+    listAllSupplier({}).then(response => {
+      this.supplierList = response.rows;
+    });
+    listCategoryAttributeValue(114).then(resp=>{
       this.colorList = resp.rows
     })
-    listCategoryAttributeValue({categoryAttributeId:115}).then(resp=>{
+    listCategoryAttributeValue(115).then(resp=>{
       this.sizeList = resp.rows
     })
-    listCategoryAttributeValue({categoryAttributeId:116}).then(resp=>{
+    listCategoryAttributeValue(116).then(resp=>{
       this.styleList = resp.rows
     })
   },

@@ -14,4 +14,5 @@ import tech.qihangec.api.domain.ErpGoodsSku;
 public interface ErpGoodsService extends IService<ErpGoods> {
     PageResult<ErpGoods> queryPageList(ErpGoods bo, PageQuery pageQuery);
     PageResult<ErpGoodsSku> querySkuPageList(ErpGoodsSku bo, PageQuery pageQuery);
+    int insertGoods(ErpGoods goods);
 }

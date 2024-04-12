@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 12/04/2024 15:18:46
+ Date: 12/04/2024 16:08:06
 */
 
 SET NAMES utf8mb4;
@@ -166,6 +166,7 @@ INSERT INTO `erp_goods` VALUES (69, 'KH9734微喇叭牛仔裤女开叉', 'https:
 INSERT INTO `erp_goods` VALUES (70, 'KH9826小脚牛仔裤女', 'https://gd3.alicdn.com/imgextra/i2/49616689/O1CN01j5qyuA1zHc63KaMAY_!!49616689.jpg_400x400.jpg', 'KH9826', '', 31, '', '建议80-135斤', 1, 0, 0, 0, 0, 0, 0, 0, 0, '', 40.00, 0.00, 79.00, NULL, 33, 0, '春秋季', '中弹', '高腰', '2022', '69%棉  29.5%聚酯纤维 1.5%氨纶', NULL, 0, 0, 'admin', '2023-12-29 15:55:39', 'admin', '2023-12-29 15:55:39');
 INSERT INTO `erp_goods` VALUES (71, 'aaa', 'aaa', 'aaaaa', '', 2, '', '', 1, 0, 0, 0, 0, 0, 0, 0, 0, '0', 12.00, 0.00, 0.00, NULL, 33, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 'admin', '2024-01-14 21:52:30', NULL, NULL);
 INSERT INTO `erp_goods` VALUES (74, '测试测试', 'http://localhost:8080/preview/images/47', 'A0012D', '', 2, '', '', 1, 0, 0, 0, 0, 0, 0, 0, 0, '0', 12.00, 0.00, 0.00, NULL, 33, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 'admin', '2024-01-16 10:34:33', NULL, NULL);
+INSERT INTO `erp_goods` VALUES (1778696459749048321, '爱的', 'https://cbu01.alicdn.com/img/ibank/O1CN01Fl00xq2LWeaeyzP63_!!2213235819700-0-cib.jpg', 'add34232', '', 2, '', '', 1, 0, 0, 0, 0, 0, 0, 0, 0, '0', 122.00, 0.00, 0.00, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 'admin', '2024-04-12 16:07:37', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for erp_goods_brand
@@ -1804,6 +1805,8 @@ INSERT INTO `erp_goods_sku` VALUES (1368, 74, '', 'A0012D15032', 413, '浅蓝色
 INSERT INTO `erp_goods_sku` VALUES (1369, 74, '', 'A0012D15031', 413, '浅蓝色加绒', 'http://localhost:8080/preview/images/48', 407, '31', 0, '', NULL, 12.00, 0.00, 0.00, 0.00, '', 1, 0, 0, 0);
 INSERT INTO `erp_goods_sku` VALUES (1370, 74, '', 'A0012D14032', 412, '复古蓝加绒', 'http://localhost:8080/preview/images/49', 408, '32', 0, '', NULL, 12.00, 0.00, 0.00, 0.00, '', 1, 0, 0, 0);
 INSERT INTO `erp_goods_sku` VALUES (1371, 74, '', 'A0012D14031', 412, '复古蓝加绒', 'http://localhost:8080/preview/images/49', 407, '31', 0, '', NULL, 12.00, 0.00, 0.00, 0.00, '', 1, 0, 0, 0);
+INSERT INTO `erp_goods_sku` VALUES (1778696459749048322, 1778696459749048321, '', 'add342320102', 308, '黑色', 'https://cbu01.alicdn.com/img/ibank/O1CN01Fl00xq2LWeaeyzP63_!!2213235819700-0-cib.jpg', 342, 'M', 0, '', NULL, 122.00, 0.00, 0.00, 0.00, '', 1, 0, 0, 0);
+INSERT INTO `erp_goods_sku` VALUES (1778696459749048323, 1778696459749048321, '', 'add342320101', 308, '黑色', 'https://cbu01.alicdn.com/img/ibank/O1CN01Fl00xq2LWeaeyzP63_!!2213235819700-0-cib.jpg', 341, 'S', 0, '', NULL, 122.00, 0.00, 0.00, 0.00, '', 1, 0, 0, 0);
 
 -- ----------------------------
 -- Table structure for erp_goods_sku_attr
@@ -1811,7 +1814,7 @@ INSERT INTO `erp_goods_sku` VALUES (1371, 74, '', 'A0012D14031', 412, '复古蓝
 DROP TABLE IF EXISTS `erp_goods_sku_attr`;
 CREATE TABLE `erp_goods_sku_attr`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT,
-  `goods_id` int(0) NOT NULL,
+  `goods_id` bigint(0) NOT NULL,
   `type` char(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `k` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `kid` int(0) DEFAULT NULL,
@@ -2414,6 +2417,10 @@ INSERT INTO `erp_goods_sku_attr` VALUES (599, 74, 'size', '尺码', 115, 408, NU
 INSERT INTO `erp_goods_sku_attr` VALUES (600, 74, 'size', '尺码', 115, 407, NULL, NULL);
 INSERT INTO `erp_goods_sku_attr` VALUES (601, 74, 'style', '款式', 116, 413, NULL, NULL);
 INSERT INTO `erp_goods_sku_attr` VALUES (602, 74, 'style', '款式', 116, 412, NULL, NULL);
+INSERT INTO `erp_goods_sku_attr` VALUES (1778696459749048324, 1778696459749048321, 'color', '颜色', 114, 308, NULL, NULL);
+INSERT INTO `erp_goods_sku_attr` VALUES (1778696459749048325, 1778696459749048321, 'size', '尺码', 115, 342, NULL, NULL);
+INSERT INTO `erp_goods_sku_attr` VALUES (1778696459874877441, 1778696459749048321, 'size', '尺码', 115, 341, NULL, NULL);
+INSERT INTO `erp_goods_sku_attr` VALUES (1778696459874877442, 1778696459749048321, 'style', '款式', 116, 308, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for erp_order
@@ -3707,7 +3714,7 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 103, 'admin', '至简', '00', 'ry@163.com', '15888888888', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2024-04-12 15:17:54', 'admin', '2023-08-07 19:31:37', '', '2024-04-12 15:17:54', '管理员');
+INSERT INTO `sys_user` VALUES (1, 103, 'admin', '至简', '00', 'ry@163.com', '15888888888', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2024-04-12 16:04:16', 'admin', '2023-08-07 19:31:37', '', '2024-04-12 16:04:16', '管理员');
 INSERT INTO `sys_user` VALUES (2, 105, 'qihang', 'qihang', '00', 'qihang@qq.com', '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2023-08-07 19:31:37', 'admin', '2023-08-07 19:31:37', 'admin', '2024-01-05 18:29:55', '测试员');
 
 -- ----------------------------
