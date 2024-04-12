@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tech.qihangec.api.mapper.ErpGoodsSkuMapper">
+
+    <resultMap id="BaseResultMap" type="tech.qihangec.api.domain.ErpGoodsSku">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="goodsId" column="goods_id" jdbcType="BIGINT"/>
+            <result property="specName" column="spec_name" jdbcType="VARCHAR"/>
+            <result property="specNum" column="spec_num" jdbcType="VARCHAR"/>
+            <result property="colorId" column="color_id" jdbcType="INTEGER"/>
+            <result property="colorValue" column="color_value" jdbcType="VARCHAR"/>
+            <result property="colorImage" column="color_image" jdbcType="VARCHAR"/>
+            <result property="sizeId" column="size_id" jdbcType="INTEGER"/>
+            <result property="sizeValue" column="size_value" jdbcType="VARCHAR"/>
+            <result property="styleId" column="style_id" jdbcType="INTEGER"/>
+            <result property="styleValue" column="style_value" jdbcType="VARCHAR"/>
+            <result property="barCode" column="bar_code" jdbcType="VARCHAR"/>
+            <result property="purPrice" column="pur_price" jdbcType="DECIMAL"/>
+            <result property="wholePrice" column="whole_price" jdbcType="DECIMAL"/>
+            <result property="retailPrice" column="retail_price" jdbcType="DECIMAL"/>
+            <result property="unitCost" column="unit_cost" jdbcType="DECIMAL"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="lowQty" column="low_qty" jdbcType="INTEGER"/>
+            <result property="highQty" column="high_qty" jdbcType="INTEGER"/>
+            <result property="disable" column="disable" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,goods_id,spec_name,
+        spec_num,color_id,color_value,
+        color_image,size_id,size_value,
+        style_id,style_value,bar_code,
+        pur_price,whole_price,retail_price,
+        unit_cost,remark,status,
+        low_qty,high_qty,disable
+    </sql>
+</mapper>

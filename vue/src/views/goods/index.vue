@@ -72,38 +72,7 @@
           v-hasPermi="['goods:goods:add']"
         >添加商品</el-button>
       </el-col>
-      <el-col :span="1.5">
-        <el-button
-          type="success"
-          plain
-          icon="el-icon-edit"
-          size="mini"
-          @click="handleImport"
-          v-hasPermi="['goods:goods:edit']"
-        >导入商品</el-button>
-      </el-col>
-      <!--
-      <el-col :span="1.5">
-        <el-button
-          type="danger"
-          plain
-          icon="el-icon-delete"
-          size="mini"
-          :disabled="multiple"
-          @click="handleDelete"
-          v-hasPermi="['goods:goods:remove']"
-        >删除</el-button>
-      </el-col> -->
-      <el-col :span="1.5">
-        <el-button
-          type="warning"
-          plain
-          icon="el-icon-download"
-          size="mini"
-          @click="handleExport"
-          v-hasPermi="['goods:goods:export']"
-        >导出</el-button>
-      </el-col>
+
       <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -186,20 +155,7 @@
       :limit.sync="queryParams.pageSize"
       @pagination="getList"
     />
-    <!-- 导入ERP商品 -->
-    <el-dialog title="导入商品" :visible.sync="importOpen" width="400px" append-to-body>
-      <el-upload
-        class="upload-demo"
-        :headers="headers"
-        drag
-        action="/dev-api/tao/order/order_import"
-        accept="xlsx"
-        multiple >
-        <i class="el-icon-upload"></i>
-        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
-      </el-upload>
-    </el-dialog>
+
 
     <!-- 添加或修改商品管理对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
@@ -309,6 +265,7 @@ import Treeselect from '@riophae/vue-treeselect'
 import '@riophae/vue-treeselect/dist/vue-treeselect.css'
 import { listCategory } from "@/api/goods/category";
 import {getToken} from "@/utils/auth";
+import {listAllSupplier} from "@/api/scm/supplier";
 export default {
   name: "Goods",
   components: { Treeselect },
@@ -384,14 +341,14 @@ export default {
     };
   },
   created() {
-    // listCategory(this.queryParams).then(response => {
-    //     this.categoryList = response.rows
-    //     this.categoryTree = this.buildTree(response.rows,0)
-    //   });
-    // listSupplier({}).then(response => {
-    //   this.supplierList = response.rows;
-    //   // this.supplierLoading = false;
-    // });
+    listCategory(this.queryParams).then(response => {
+        this.categoryList = response.rows
+        this.categoryTree = this.buildTree(response.rows,0)
+      });
+    listAllSupplier({}).then(response => {
+      this.supplierList = response.rows;
+      // this.supplierLoading = false;
+    });
     this.getList();
   },
   methods: {

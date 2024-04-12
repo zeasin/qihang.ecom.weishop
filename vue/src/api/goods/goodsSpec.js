@@ -3,7 +3,7 @@ import request from '@/utils/request'
 // 查询商品规格库存管理列表
 export function listGoodsSpec(query) {
   return request({
-    url: '/api/oms-api/goods/sku_list',
+    url: '/goods/sku_list',
     method: 'get',
     params: query
   })
