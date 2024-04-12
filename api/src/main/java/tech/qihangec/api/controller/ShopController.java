@@ -70,6 +70,7 @@ public class ShopController extends BaseController {
     @PostMapping("/shop")
     public AjaxResult add(@RequestBody SysShop shop)
     {
+        shop.setType(5);
         shop.setModifyOn(System.currentTimeMillis()/1000);
         return toAjax(shopService.insertShop(shop));
     }
